@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Fatemeh Karam</title>
+  <meta name="description" content="Projects by Fatemeh Karam." />
+  <style>
+    :root{--bg:#f4f6f8;--card:#fff;--text:#1f2937;--muted:#4b5563;--line:#e5e7eb;--shadow:0 2px 10px rgba(0,0,0,.08);--radius:14px;--max:980px}
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+    a{color:inherit} .wrap{max-width:var(--max);margin:0 auto;padding:28px 16px 60px}
+    header{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);padding:22px 18px;margin-bottom:18px}
+    .top{display:flex;gap:14px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+    h1{margin:0;font-size:26px} .tagline{margin:6px 0 0;color:var(--muted)} .small{font-size:13px;color:var(--muted)}
+    nav{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+    .navlink{text-decoration:none;border:1px solid var(--line);padding:8px 10px;border-radius:999px;background:#fff}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px}
+    .card{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);padding:18px}
+    h2{margin:0 0 10px;font-size:18px} h3{margin:14px 0 8px;font-size:16px}
+    p{margin:0 0 10px} ul{margin:8px 0 0 18px} li{margin:6px 0}
+    .pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .pill{font-size:13px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted)}
+    .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .btn{display:inline-block;text-decoration:none;border:1px solid var(--line);padding:10px 12px;border-radius:10px;background:#fff}
+    footer{margin-top:16px;text-align:center;color:var(--muted);font-size:13px}
+    .anchor{scroll-margin-top:18px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="top">
+        <div>
+          <h1>Projects</h1>
+          <p class="tagline">Selected work across threat intelligence, cybersecurity, and data analytics</p>
+          <p class="small">Tip: You can link directly to a project using the section IDs (anchors).</p>
+        </div>
+        <div class="btnrow">
+          <a class="btn" href="index.html">Back to Home</a>
+        </div>
+      </div>
+
+      <nav aria-label="Site navigation">
+        <a class="navlink" href="index.html">Home</a>
+        <a class="navlink" href="projects.html">Projects</a>
+        <a class="navlink" href="experience.html">Experience</a>
+        <a class="navlink" href="certifications.html">Certifications</a>
+        <a class="navlink" href="resume.html">Resume</a>
+        <a class="navlink" href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <div class="grid">
+
+      <section class="card">
+        <h2>Cybersecurity & Threat Intelligence</h2>
+
+        <div id="threat-intel-assistant" class="anchor"></div>
+        <h3>Threat Intelligence Assistant (RAG + OSINT)</h3>
+        <p class="small">Sep 2025 – Oct 2025 · Python · Web App · APIs · RAG</p>
+        <p>
+          Built a Retrieval-Augmented Generation web application that enriches threat indicators (IPs, domains, file hashes)
+          using OSINT sources and produces automated intelligence summaries.
+        </p>
+        <ul>
+          <li>Integrated OSINT APIs (AbuseIPDB, AlienVault OTX) for multi-source enrichment.</li>
+          <li>Generated structured, automated intelligence reports and risk summaries.</li>
+          <li>Designed the app for quick analyst workflows (input → enrichment → summary).</li>
+        </ul>
+        <div class="pillrow">
+          <span class="pill">Python</span><span class="pill">RAG</span><span class="pill">OSINT</span><span class="pill">API Integration</span><span class="pill">Security Analytics</span>
+        </div>
+        <div class="btnrow">
+          <a class="btn" href="https://huggingface.co/spaces/Katiefkar/Threat-Intelligence-Assistant-Oct-15-2025" target="_blank" rel="noopener">Live Demo</a>
+          <a class="btn" href="https://github.com/FatemehKaram/rag-threat-intel-assistant-app" target="_blank" rel="noopener">GitHub Repo</a>
+        </div>
+
+        <div id="hids-ebpf-lstm" class="anchor"></div>
+        <h3>Behavior-Based HIDS Using eBPF & LSTM</h3>
+        <p class="small">Jan 2024 – May 2024 · Linux · eBPF · Machine Learning</p>
+        <p>
+          Developed a Linux host intrusion detection system leveraging eBPF for real-time event tracing and an LSTM model
+          to detect anomalous process behaviors and potential threats.
+        </p>
+        <ul>
+          <li>Implemented kernel-level telemetry collection for efficient real-time monitoring.</li>
+          <li>Built an LSTM-based model to identify abnormal behavior patterns.</li>
+          <li>Focused on performance, low overhead, and actionable detection signals.</li>
+        </ul>
+        <div class="pillrow">
+          <span class="pill">Linux</span><span class="pill">eBPF</span><span class="pill">LSTM</span><span class="pill">Anomaly Detection</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Data Analysis & Visualization</h2>
+
+        <div id="applied-data-analysis" class="anchor"></div>
+        <h3>Applied Data Analysis & Visualization</h3>
+        <p class="small">Jan 2025 · Python · SQL · Excel</p>
+        <p>
+          End-to-end data analysis on multiple datasets, including preprocessing, cleaning, validation, exploratory analysis,
+          and stakeholder-ready visualizations.
+        </p>
+        <ul>
+          <li>Performed trend, distribution, correlation, and outlier analysis to identify key findings.</li>
+          <li>Created charts and summaries to communicate insights clearly to non-technical audiences.</li>
+          <li>Built reusable analysis workflows with Pandas/NumPy/Matplotlib.</li>
+        </ul>
+        <div class="pillrow">
+          <span class="pill">Pandas</span><span class="pill">NumPy</span><span class="pill">Matplotlib</span><span class="pill">SQL</span>
+        </div>
+
+        <div id="cognos-dashboard" class="anchor"></div>
+        <h3>Technology Trends Dashboard (IBM Cognos Analytics)</h3>
+        <p class="small">Jan 2025 · IBM Cognos Analytics</p>
+        <p>
+          Designed an interactive multi-tab dashboard analyzing technology usage trends, future adoption patterns, and demographic distributions.
+        </p>
+        <ul>
+          <li>Transformed raw survey data into decision-ready visual insights.</li>
+          <li>Built multiple dashboard tabs to support different stakeholder questions.</li>
+          <li>Applied data storytelling techniques for clear executive communication.</li>
+        </ul>
+        <div class="pillrow">
+          <span class="pill">IBM Cognos</span><span class="pill">Dashboarding</span><span class="pill">Data Storytelling</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Add screenshots (optional)</h2>
+        <p class="muted small">
+          If you want screenshots, create an <code>images/</code> folder in your repo and upload images like
+          <code>images/threat-intel.png</code>. Then insert:
+        </p>
+        <pre style="white-space:pre-wrap;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;overflow:auto;">
+&lt;img src="images/threat-intel.png" alt="Threat Intelligence Assistant screenshot" style="width:100%;border-radius:12px;border:1px solid #e5e7eb;" /&gt;
+        </pre>
+      </section>
+
+    </div>
+
+    <footer>
+      © <span id="y"></span> Fatemeh Karam · Projects
+    </footer>
+
+  </div>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
