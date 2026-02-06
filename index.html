@@ -5,89 +5,196 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fatemeh Karam | Portfolio</title>
   <meta name="description" content="Portfolio of Fatemeh Karam — Data Analyst, Cybersecurity Graduate, Backend Developer." />
+
+  <!-- Optional (recommended later): add favicon + social preview image -->
+  <!--
+  <link rel="icon" href="favicon.ico">
+  <meta property="og:title" content="Fatemeh Karam | Portfolio">
+  <meta property="og:description" content="Data Analytics · Cybersecurity · Backend Development">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fatemehkaram.github.io/">
+  <meta property="og:image" content="images/preview.png">
+  -->
+
   <style>
     :root{
-      --bg:#f4f6f8;
+      --bg:#f6f7fb;
       --card:#ffffff;
-      --text:#1f2937;
-      --muted:#4b5563;
-      --line:#e5e7eb;
-      --shadow:0 2px 10px rgba(0,0,0,.08);
-      --radius:14px;
-      --max:980px;
+      --text:#111827;
+      --muted:#6b7280;
+      --line:rgba(229,231,235,.95);
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --shadow2:0 16px 40px rgba(0,0,0,.12);
+      --radius:16px;
+      --max:1024px;
+      --focus:rgba(59,130,246,.35);
+      --accent:rgba(147,197,253,.85);
     }
+
+    /* Dark theme variables (toggled by body.dark) */
+    body.dark{
+      --bg:#0b1220;
+      --card:rgba(17,24,39,.92);
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --line:rgba(255,255,255,.12);
+      --shadow:0 14px 40px rgba(0,0,0,.45);
+      --shadow2:0 18px 50px rgba(0,0,0,.55);
+      --accent:rgba(59,130,246,.4);
+      --focus:rgba(99,102,241,.4);
+    }
+
     *{box-sizing:border-box}
+
     body{
       margin:0;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:var(--bg);
       color:var(--text);
-      line-height:1.55;
+      line-height:1.6;
+      background:
+        radial-gradient(1200px 600px at 10% 0%, rgba(238,242,255,.9), transparent 60%),
+        radial-gradient(1200px 600px at 90% 0%, rgba(236,254,255,.8), transparent 60%),
+        var(--bg);
     }
+    body.dark{
+      background:
+        radial-gradient(1200px 600px at 10% 0%, rgba(59,130,246,.18), transparent 60%),
+        radial-gradient(1200px 600px at 90% 0%, rgba(99,102,241,.14), transparent 60%),
+        var(--bg);
+    }
+
     a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 16px 60px;}
+    .wrap{max-width:var(--max); margin:0 auto; padding:34px 16px 72px;}
+
     header{
       background:var(--card);
       border:1px solid var(--line);
       box-shadow:var(--shadow);
       border-radius:var(--radius);
       padding:22px 18px;
-      margin-bottom:18px;
+      margin-bottom:16px;
+      backdrop-filter: blur(10px);
     }
+
     .top{
-      display:flex; gap:14px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap;
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
     }
-    h1{margin:0; font-size:28px; letter-spacing:.2px}
-    .tagline{margin:6px 0 0; color:var(--muted)}
+
+    h1{
+      margin:0;
+      font-size:34px;
+      letter-spacing:-0.4px;
+      line-height:1.15;
+    }
+
+    .tagline{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .small{font-size:13px; color:var(--muted)}
+    .muted{color:var(--muted)}
+
     nav{
-      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
-      margin-top:14px; padding-top:14px; border-top:1px solid var(--line);
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:14px;
+      padding-top:14px;
+      border-top:1px solid var(--line);
     }
+
     .navlink{
       text-decoration:none;
       border:1px solid var(--line);
       padding:8px 10px;
       border-radius:999px;
-      background:#fff;
+      background:rgba(255,255,255,.75);
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
     }
-    .navlink:hover{filter:brightness(.98)}
-    .grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
+    body.dark .navlink{background:rgba(255,255,255,.06)}
+    .navlink:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(0,0,0,.08);
     }
+    .navlink[aria-current="page"]{
+      border-color: var(--accent);
+      box-shadow: 0 10px 20px rgba(0,0,0,.10);
+      font-weight:700;
+    }
+
+    .grid{display:grid; grid-template-columns:1fr; gap:14px;}
+
     .card{
       background:var(--card);
       border:1px solid var(--line);
       box-shadow:var(--shadow);
       border-radius:var(--radius);
       padding:18px;
+      backdrop-filter: blur(10px);
+      transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
     }
-    h2{margin:0 0 10px; font-size:18px}
+    .card:hover{
+      transform: translateY(-2px);
+      box-shadow: var(--shadow2);
+      border-color: rgba(147,197,253,.55);
+    }
+    body.dark .card:hover{border-color: rgba(99,102,241,.35)}
+
+    h2{margin:0 0 10px; font-size:20px; letter-spacing:-0.2px}
     h3{margin:14px 0 8px; font-size:16px}
     p{margin:0 0 10px}
-    .muted{color:var(--muted)}
     ul{margin:8px 0 0 18px}
     li{margin:6px 0}
+
     .pillrow{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
     .pill{
       font-size:13px;
       padding:6px 10px;
       border-radius:999px;
       border:1px solid var(--line);
-      background:#fff;
+      background:rgba(255,255,255,.7);
       color:var(--muted);
     }
-    .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    body.dark .pill{background:rgba(255,255,255,.06)}
+
+    .btnrow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
     .btn{
-      display:inline-block;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
       text-decoration:none;
       border:1px solid var(--line);
       padding:10px 12px;
-      border-radius:10px;
-      background:#fff;
+      border-radius:12px;
+      background:rgba(255,255,255,.8);
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      cursor:pointer;
     }
-    .btn:hover{filter:brightness(.98)}
+    body.dark .btn{background:rgba(255,255,255,.06)}
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(0,0,0,.08);
+    }
+
+    /* accessible focus */
+    .btn:focus, .navlink:focus{
+      outline:3px solid var(--focus);
+      outline-offset:2px;
+    }
+
     .twocol{
       display:grid;
       grid-template-columns:1fr;
@@ -96,47 +203,89 @@
     @media (min-width: 860px){
       .twocol{grid-template-columns:1.1fr .9fr;}
     }
-    footer{
-      margin-top:16px;
-      text-align:center;
-      color:var(--muted);
-      font-size:13px;
-    }
-    .small{font-size:13px; color:var(--muted)}
+
     .kpi{
       display:grid;
       grid-template-columns:1fr;
       gap:10px;
-      margin-top:10px;
+      margin-top:12px;
     }
     @media (min-width: 700px){
       .kpi{grid-template-columns:repeat(3, 1fr);}
     }
     .kpi .box{
       border:1px solid var(--line);
-      border-radius:12px;
+      border-radius:14px;
       padding:12px;
-      background:#fff;
+      background:rgba(255,255,255,.7);
     }
-    .kpi .num{font-weight:700; font-size:16px; margin-bottom:4px}
+    body.dark .kpi .box{background:rgba(255,255,255,.06)}
+    .kpi .num{font-weight:800; font-size:16px; margin-bottom:4px}
+
+    /* subtle section reveal animation */
+    .reveal{
+      opacity:0;
+      transform: translateY(8px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .reveal.show{
+      opacity:1;
+      transform: translateY(0);
+    }
+
+    footer{
+      margin-top:18px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* small header actions */
+    .header-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+    }
+
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.7);
+      color:var(--muted);
+      font-size:13px;
+    }
+    body.dark .chip{background:rgba(255,255,255,.06)}
   </style>
 </head>
 
 <body>
   <div class="wrap">
 
-    <header>
+    <header class="reveal">
       <div class="top">
         <div>
           <h1>Fatemeh Karam</h1>
           <p class="tagline">Data Analyst | Cybersecurity Graduate | Backend Developer</p>
-          <p class="muted small">Burnaby, BC · English & Persian · Linux & Windows</p>
+          <div class="pillrow" style="margin-top:10px">
+            <span class="chip">📍 Burnaby, BC</span>
+            <span class="chip">🌐 English & Persian</span>
+            <span class="chip">💻 Linux & Windows</span>
+          </div>
         </div>
-        <div class="btnrow" aria-label="Primary links">
-          <!-- Replace # with your real links -->
-          <a class="btn" href="https://www.linkedin.com/in/fatemeh-karam/" target="_blank">LinkedIn</a>
-          <a class="btn" href="https://github.com/FatemehKaram/" target="_blank">GitHub</a>
-          <a class="btn" href="mailto:karam.fatemeh@yahoo.com">Email</a>
+
+        <div class="header-actions" aria-label="Primary links">
+          <a class="btn" href="https://www.linkedin.com/in/fatemeh-karam/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+          <a class="btn" href="https://github.com/FatemehKaram/" target="_blank" rel="noopener">💻 GitHub</a>
+          <a class="btn" href="mailto:karam.fatemeh@yahoo.com">✉️ Email</a>
+
+          <!-- Theme toggle -->
+          <button class="btn" id="themeBtn" type="button" aria-label="Toggle theme">🌙 Theme</button>
         </div>
       </div>
 
@@ -152,7 +301,7 @@
 
     <div class="grid">
 
-      <section class="card">
+      <section class="card reveal">
         <h2>Quick summary</h2>
         <p>
           I’m a technical professional with experience across backend development, data analytics, and cybersecurity.
@@ -176,7 +325,7 @@
       </section>
 
       <section class="twocol">
-        <div class="card">
+        <div class="card reveal">
           <h2>About me</h2>
           <p>
             I hold an M.S. in Cybersecurity (NYIT Vancouver) and completed the NPower Junior Data Analyst program.
@@ -185,9 +334,14 @@
           <p class="muted">
             I’m interested in roles that combine analytics and technology—data analysis, security analytics, backend development, and technical support.
           </p>
+
+          <div class="btnrow">
+            <a class="btn" href="projects.html">✨ View projects</a>
+            <a class="btn" href="resume.html">📄 Resume</a>
+          </div>
         </div>
 
-        <div class="card">
+        <div class="card reveal">
           <h2>Core skills</h2>
 
           <h3>Data & analytics</h3>
@@ -221,7 +375,7 @@
         </div>
       </section>
 
-      <section class="card">
+      <section class="card reveal">
         <h2>Featured projects</h2>
         <p class="muted">A few highlights—see the full list on the Projects page.</p>
 
@@ -231,9 +385,9 @@
           (IPs, domains, hashes) and generate automated intelligence summaries.
         </p>
         <div class="btnrow">
-          <a class="btn" href="projects.html#threat-intel-assistant">Project details</a>
-          <a class="btn" href="https://huggingface.co/spaces/Katiefkar/Threat-Intelligence-Assistant-Oct-15-2025" target="_blank" rel="noopener">Live demo</a>
-          <a class="btn" href="https://github.com/FatemehKaram/rag-threat-intel-assistant-app" target="_blank" rel="noopener">Source code</a>
+          <a class="btn" href="projects.html#threat-intel-assistant">📌 Project details</a>
+          <a class="btn" href="https://huggingface.co/spaces/Katiefkar/Threat-Intelligence-Assistant-Oct-15-2025" target="_blank" rel="noopener">🚀 Live demo</a>
+          <a class="btn" href="https://github.com/FatemehKaram/rag-threat-intel-assistant-app" target="_blank" rel="noopener">🧩 Source code</a>
         </div>
 
         <h3>Behavior-Based HIDS using eBPF & LSTM</h3>
@@ -242,7 +396,7 @@
           to identify anomalous process behaviors.
         </p>
         <div class="btnrow">
-          <a class="btn" href="projects.html#hids-ebpf-lstm">Project details</a>
+          <a class="btn" href="projects.html#hids-ebpf-lstm">📌 Project details</a>
         </div>
 
         <h3>Technology Trends Dashboard (IBM Cognos)</h3>
@@ -250,11 +404,11 @@
           Designed an interactive multi-tab dashboard analyzing technology usage trends, future adoption patterns, and demographic distributions.
         </p>
         <div class="btnrow">
-          <a class="btn" href="projects.html#cognos-dashboard">Project details</a>
+          <a class="btn" href="projects.html#cognos-dashboard">📌 Project details</a>
         </div>
       </section>
 
-      <section class="card">
+      <section class="card reveal">
         <h2>Certifications & education</h2>
         <ul>
           <li><strong>M.S. Cybersecurity</strong> — New York Institute of Technology (NYIT), Vancouver (May 2024)</li>
@@ -265,44 +419,73 @@
           <li><strong>B.S. Computer Engineering (Software)</strong> — Azad University</li>
         </ul>
         <div class="btnrow">
-          <a class="btn" href="certifications.html">See all certifications</a>
+          <a class="btn" href="certifications.html">🎓 See all certifications</a>
         </div>
       </section>
 
-      <section class="card">
+      <section class="card reveal">
         <h2>Resume</h2>
         <p class="muted">
           Put your PDF in the same repository (e.g., <code>resume.pdf</code>) and link it below.
         </p>
         <div class="btnrow">
-          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Download resume (PDF)</a>
-          <a class="btn" href="resume.html">Resume page</a>
+          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">⬇️ Download resume (PDF)</a>
+          <a class="btn" href="resume.html">📄 Resume page</a>
         </div>
       </section>
 
-      <section class="card">
+      <section class="card reveal">
         <h2>Contact</h2>
         <p>If you’d like to connect about opportunities in data, security analytics, backend development, or IT support, feel free to reach out.</p>
         <div class="btnrow">
-          <a class="btn" href="mailto:karam.fatemeh@yahoo.com">karam.fatemeh@yahoo.com</a>
-          <!-- Replace # with your real links -->
-          <a class="btn" href="https://www.linkedin.com/in/fatemeh-karam/" target="_blank">LinkedIn</a>
-          <a class="btn" href="https://github.com/FatemehKaram/" target="_blank">GitHub</a>
+          <a class="btn" href="mailto:karam.fatemeh@yahoo.com">✉️ karam.fatemeh@yahoo.com</a>
+          <a class="btn" href="https://www.linkedin.com/in/fatemeh-karam/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+          <a class="btn" href="https://github.com/FatemehKaram/" target="_blank" rel="noopener">💻 GitHub</a>
         </div>
       </section>
 
     </div>
 
-    <footer>
+    <footer class="reveal">
       © <span id="y"></span> Fatemeh Karam · Built with GitHub Pages
     </footer>
 
   </div>
 
   <script>
+    // Footer year
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme toggle (saved in localStorage)
+    const themeKey = "theme";
+    const savedTheme = localStorage.getItem(themeKey);
+    if (savedTheme === "dark") document.body.classList.add("dark");
+
+    const themeBtn = document.getElementById("themeBtn");
+    if (themeBtn) {
+      const setBtn = () => themeBtn.textContent = document.body.classList.contains("dark") ? "☀️ Theme" : "🌙 Theme";
+      setBtn();
+
+      themeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        localStorage.setItem(themeKey, document.body.classList.contains("dark") ? "dark" : "light");
+        setBtn();
+      });
+    }
+
+    // Active nav highlighting
+    const here = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    document.querySelectorAll("nav a.navlink").forEach(a => {
+      const target = (a.getAttribute("href") || "").split("/").pop().toLowerCase();
+      if (target === here) a.setAttribute("aria-current", "page");
+    });
+
+    // Reveal animations on scroll (professional, subtle)
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
   </script>
 </body>
 </html>
-
-
