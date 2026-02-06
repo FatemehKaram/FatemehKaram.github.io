@@ -1,50 +1,306 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Fatemeh Karam | Portfolio</title>
-    <style>
-        body {
-            font-family: Arial;
-            margin: 40px;
-            background-color: #f4f6f8;
-        }
-        h1 {
-            color: #2c3e50;
-        }
-        .card {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fatemeh Karam | Portfolio</title>
+  <meta name="description" content="Portfolio of Fatemeh Karam — Data Analyst, Cybersecurity Graduate, Backend Developer." />
+  <style>
+    :root{
+      --bg:#f4f6f8;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#4b5563;
+      --line:#e5e7eb;
+      --shadow:0 2px 10px rgba(0,0,0,.08);
+      --radius:14px;
+      --max:980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 16px 60px;}
+    header{
+      background:var(--card);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+      padding:22px 18px;
+      margin-bottom:18px;
+    }
+    .top{
+      display:flex; gap:14px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap;
+    }
+    h1{margin:0; font-size:28px; letter-spacing:.2px}
+    .tagline{margin:6px 0 0; color:var(--muted)}
+    nav{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      margin-top:14px; padding-top:14px; border-top:1px solid var(--line);
+    }
+    .navlink{
+      text-decoration:none;
+      border:1px solid var(--line);
+      padding:8px 10px;
+      border-radius:999px;
+      background:#fff;
+    }
+    .navlink:hover{filter:brightness(.98)}
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+      padding:18px;
+    }
+    h2{margin:0 0 10px; font-size:18px}
+    h3{margin:14px 0 8px; font-size:16px}
+    p{margin:0 0 10px}
+    .muted{color:var(--muted)}
+    ul{margin:8px 0 0 18px}
+    li{margin:6px 0}
+    .pillrow{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
+    .pill{
+      font-size:13px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--muted);
+    }
+    .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      border:1px solid var(--line);
+      padding:10px 12px;
+      border-radius:10px;
+      background:#fff;
+    }
+    .btn:hover{filter:brightness(.98)}
+    .twocol{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+    @media (min-width: 860px){
+      .twocol{grid-template-columns:1.1fr .9fr;}
+    }
+    footer{
+      margin-top:16px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .small{font-size:13px; color:var(--muted)}
+    .kpi{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+      margin-top:10px;
+    }
+    @media (min-width: 700px){
+      .kpi{grid-template-columns:repeat(3, 1fr);}
+    }
+    .kpi .box{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:12px;
+      background:#fff;
+    }
+    .kpi .num{font-weight:700; font-size:16px; margin-bottom:4px}
+  </style>
 </head>
 
 <body>
+  <div class="wrap">
 
-<h1>Fatemeh Karam</h1>
-<p>Data Analyst | Cybersecurity Graduate | AI Enthusiast</p>
+    <header>
+      <div class="top">
+        <div>
+          <h1>Fatemeh Karam</h1>
+          <p class="tagline">Data Analyst | Cybersecurity Graduate | Backend Developer</p>
+          <p class="muted small">Burnaby, BC · English & Persian · Linux & Windows</p>
+        </div>
+        <div class="btnrow" aria-label="Primary links">
+          <!-- Replace # with your real links -->
+          <a class="btn" href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="mailto:karam.fatemeh@yahoo.com">Email</a>
+        </div>
+      </div>
 
-<div class="card">
-<h2>About Me</h2>
-<p>I’m a Data Analyst graduate from NPower Canada with a Master’s in Cybersecurity. I enjoy working on threat intelligence, data visualization, and machine learning projects.</p>
-</div>
+      <nav aria-label="Site navigation">
+        <a class="navlink" href="index.html">Home</a>
+        <a class="navlink" href="projects.html">Projects</a>
+        <a class="navlink" href="experience.html">Experience</a>
+        <a class="navlink" href="certifications.html">Certifications</a>
+        <a class="navlink" href="resume.html">Resume</a>
+        <a class="navlink" href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-<div class="card">
-<h2>Projects</h2>
-<ul>
-<li>Threat Intelligence Assistant (RAG + OSINT APIs)</li>
-<!-- <li>Music Genre Classifier (ML)</li> -->
-<li>Chicago Crime Data Analysis</li>
-</ul>
-</div>
+    <div class="grid">
 
-<div class="card">
-<h2>Contact</h2>
-<p>Email: karam.fatemeh@yahoo.com</p>
-<p>GitHub: github.com/FatemehKaram</p>
-</div>
+      <section class="card">
+        <h2>Quick summary</h2>
+        <p>
+          I’m a technical professional with experience across backend development, data analytics, and cybersecurity.
+          I build data-driven and security-focused solutions using Python, SQL, and modern tooling, and I enjoy turning complex information into clear, decision-ready insights.
+        </p>
 
+        <div class="kpi" aria-label="Highlights">
+          <div class="box">
+            <div class="num">4+ years</div>
+            <div class="small">Backend development (PHP/CodeIgniter, Python/Flask)</div>
+          </div>
+          <div class="box">
+            <div class="num">Performance wins</div>
+            <div class="small">SQL optimization & indexing (reduced response time)</div>
+          </div>
+          <div class="box">
+            <div class="num">Security + data</div>
+            <div class="small">Threat intel, HIDS research, dashboards</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="twocol">
+        <div class="card">
+          <h2>About me</h2>
+          <p>
+            I hold an M.S. in Cybersecurity (NYIT Vancouver) and completed the NPower Junior Data Analyst program.
+            My background includes building and maintaining web applications, optimizing MySQL databases, supporting IT systems, and developing projects in threat intelligence and intrusion detection.
+          </p>
+          <p class="muted">
+            I’m interested in roles that combine analytics and technology—data analysis, security analytics, backend development, and technical support.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Core skills</h2>
+
+          <h3>Data & analytics</h3>
+          <div class="pillrow">
+            <span class="pill">Python (Pandas, NumPy)</span>
+            <span class="pill">SQL (MySQL, SQLite)</span>
+            <span class="pill">Data cleaning</span>
+            <span class="pill">EDA</span>
+            <span class="pill">Dashboards</span>
+            <span class="pill">Storytelling</span>
+          </div>
+
+          <h3>Cybersecurity</h3>
+          <div class="pillrow">
+            <span class="pill">Threat intelligence</span>
+            <span class="pill">OSINT APIs</span>
+            <span class="pill">eBPF monitoring</span>
+            <span class="pill">Intrusion detection</span>
+            <span class="pill">Linux security</span>
+          </div>
+
+          <h3>Development & tools</h3>
+          <div class="pillrow">
+            <span class="pill">Flask</span>
+            <span class="pill">PHP (CodeIgniter)</span>
+            <span class="pill">Git/GitHub</span>
+            <span class="pill">Jupyter</span>
+            <span class="pill">IBM Cognos</span>
+            <span class="pill">VMware/VirtualBox</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Featured projects</h2>
+        <p class="muted">A few highlights—see the full list on the Projects page.</p>
+
+        <h3>Threat Intelligence Assistant (RAG + OSINT)</h3>
+        <p>
+          Built a Retrieval-Augmented Generation web app integrating OSINT APIs (AbuseIPDB, AlienVault OTX) to assess indicators
+          (IPs, domains, hashes) and generate automated intelligence summaries.
+        </p>
+        <div class="btnrow">
+          <a class="btn" href="projects.html#threat-intel-assistant">Project details</a>
+          <a class="btn" href="https://huggingface.co/spaces/Katiefkar/Threat-Intelligence-Assistant-Oct-15-2025" target="_blank" rel="noopener">Live demo</a>
+          <a class="btn" href="https://github.com/FatemehKaram/rag-threat-intel-assistant-app" target="_blank" rel="noopener">Source code</a>
+        </div>
+
+        <h3>Behavior-Based HIDS using eBPF & LSTM</h3>
+        <p>
+          Developed a Linux host-based intrusion detection system using eBPF for real-time event tracing and an LSTM model
+          to identify anomalous process behaviors.
+        </p>
+        <div class="btnrow">
+          <a class="btn" href="projects.html#hids-ebpf-lstm">Project details</a>
+        </div>
+
+        <h3>Technology Trends Dashboard (IBM Cognos)</h3>
+        <p>
+          Designed an interactive multi-tab dashboard analyzing technology usage trends, future adoption patterns, and demographic distributions.
+        </p>
+        <div class="btnrow">
+          <a class="btn" href="projects.html#cognos-dashboard">Project details</a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Certifications & education</h2>
+        <ul>
+          <li><strong>M.S. Cybersecurity</strong> — New York Institute of Technology (NYIT), Vancouver (May 2024)</li>
+          <li><strong>NPower</strong> — Junior Data Analyst Program (Oct 2025 – Jan 2026)</li>
+          <li><strong>IBM</strong> — Data Analyst Professional Certificate (Coursera)</li>
+          <li><strong>Microsoft</strong> — Azure AI-900</li>
+          <li><strong>LPIC-1</strong> — Linux certification</li>
+          <li><strong>B.S. Computer Engineering (Software)</strong> — Azad University</li>
+        </ul>
+        <div class="btnrow">
+          <a class="btn" href="certifications.html">See all certifications</a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Resume</h2>
+        <p class="muted">
+          Put your PDF in the same repository (e.g., <code>resume.pdf</code>) and link it below.
+        </p>
+        <div class="btnrow">
+          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Download resume (PDF)</a>
+          <a class="btn" href="resume.html">Resume page</a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Contact</h2>
+        <p>If you’d like to connect about opportunities in data, security analytics, backend development, or IT support, feel free to reach out.</p>
+        <div class="btnrow">
+          <a class="btn" href="mailto:karam.fatemeh@yahoo.com">karam.fatemeh@yahoo.com</a>
+          <!-- Replace # with your real links -->
+          <a class="btn" href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </section>
+
+    </div>
+
+    <footer>
+      © <span id="y"></span> Fatemeh Karam · Built with GitHub Pages
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
