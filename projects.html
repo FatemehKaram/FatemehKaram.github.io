@@ -5,39 +5,260 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects | Fatemeh Karam</title>
   <meta name="description" content="Projects by Fatemeh Karam." />
+
   <style>
-    :root{--bg:#f4f6f8;--card:#fff;--text:#1f2937;--muted:#4b5563;--line:#e5e7eb;--shadow:0 2px 10px rgba(0,0,0,.08);--radius:14px;--max:980px}
-    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
-    a{color:inherit} .wrap{max-width:var(--max);margin:0 auto;padding:28px 16px 60px}
-    header{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);padding:22px 18px;margin-bottom:18px}
-    .top{display:flex;gap:14px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
-    h1{margin:0;font-size:26px} .tagline{margin:6px 0 0;color:var(--muted)} .small{font-size:13px;color:var(--muted)}
-    nav{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
-    .navlink{text-decoration:none;border:1px solid var(--line);padding:8px 10px;border-radius:999px;background:#fff}
-    .grid{display:grid;grid-template-columns:1fr;gap:14px}
-    .card{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);padding:18px}
-    h2{margin:0 0 10px;font-size:18px} h3{margin:14px 0 8px;font-size:16px}
-    p{margin:0 0 10px} ul{margin:8px 0 0 18px} li{margin:6px 0}
-    .pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-    .pill{font-size:13px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--muted)}
-    .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .btn{display:inline-block;text-decoration:none;border:1px solid var(--line);padding:10px 12px;border-radius:10px;background:#fff}
-    footer{margin-top:16px;text-align:center;color:var(--muted);font-size:13px}
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --line:rgba(229,231,235,.95);
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --shadow2:0 16px 40px rgba(0,0,0,.12);
+      --radius:16px;
+      --max:1024px;
+      --focus:rgba(59,130,246,.35);
+      --accent:rgba(147,197,253,.85);
+    }
+
+    body.dark{
+      --bg:#0b1220;
+      --card:rgba(17,24,39,.92);
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --line:rgba(255,255,255,.12);
+      --shadow:0 14px 40px rgba(0,0,0,.45);
+      --shadow2:0 18px 50px rgba(0,0,0,.55);
+      --accent:rgba(59,130,246,.4);
+      --focus:rgba(99,102,241,.4);
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      line-height:1.6;
+      background:
+        radial-gradient(1200px 600px at 10% 0%, rgba(238,242,255,.9), transparent 60%),
+        radial-gradient(1200px 600px at 90% 0%, rgba(236,254,255,.8), transparent 60%),
+        var(--bg);
+    }
+    body.dark{
+      background:
+        radial-gradient(1200px 600px at 10% 0%, rgba(59,130,246,.18), transparent 60%),
+        radial-gradient(1200px 600px at 90% 0%, rgba(99,102,241,.14), transparent 60%),
+        var(--bg);
+    }
+
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:34px 16px 72px;}
+
+    header{
+      background:var(--card);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+      padding:22px 18px;
+      margin-bottom:16px;
+      backdrop-filter: blur(10px);
+    }
+
+    .top{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
+    h1{
+      margin:0;
+      font-size:30px;
+      letter-spacing:-0.35px;
+      line-height:1.15;
+    }
+
+    .tagline{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .small{font-size:13px; color:var(--muted)}
+    .muted{color:var(--muted)}
+
+    nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:14px;
+      padding-top:14px;
+      border-top:1px solid var(--line);
+    }
+
+    .navlink{
+      text-decoration:none;
+      border:1px solid var(--line);
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.75);
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease;
+    }
+    body.dark .navlink{background:rgba(255,255,255,.06)}
+    .navlink:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(0,0,0,.08);
+    }
+    .navlink[aria-current="page"]{
+      border-color: var(--accent);
+      box-shadow: 0 10px 20px rgba(0,0,0,.10);
+      font-weight:700;
+    }
+
+    .grid{display:grid; grid-template-columns:1fr; gap:14px;}
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+      padding:18px;
+      backdrop-filter: blur(10px);
+      transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      box-shadow: var(--shadow2);
+      border-color: rgba(147,197,253,.55);
+    }
+    body.dark .card:hover{border-color: rgba(99,102,241,.35)}
+
+    h2{margin:0 0 10px; font-size:20px; letter-spacing:-0.2px}
+    h3{margin:14px 0 8px; font-size:16px}
+    p{margin:0 0 10px}
+    ul{margin:8px 0 0 18px}
+    li{margin:6px 0}
+
+    .btnrow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+      justify-content:flex-end;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      text-decoration:none;
+      border:1px solid var(--line);
+      padding:10px 12px;
+      border-radius:12px;
+      background:rgba(255,255,255,.8);
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      cursor:pointer;
+    }
+    body.dark .btn{background:rgba(255,255,255,.06)}
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(0,0,0,.08);
+    }
+
+    .btn:focus, .navlink:focus{
+      outline:3px solid var(--focus);
+      outline-offset:2px;
+    }
+
+    .pillrow{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+    .pill{
+      font-size:13px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.7);
+      color:var(--muted);
+    }
+    body.dark .pill{background:rgba(255,255,255,.06)}
+
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.7);
+      color:var(--muted);
+      font-size:13px;
+    }
+    body.dark .chip{background:rgba(255,255,255,.06)}
+
     .anchor{scroll-margin-top:18px}
+
+    /* project card block */
+    .project{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px;
+      background:rgba(255,255,255,.55);
+      margin-top:12px;
+    }
+    body.dark .project{background:rgba(255,255,255,.05)}
+    .meta{font-size:13px; color:var(--muted); margin:6px 0 10px}
+
+    .thumb{
+      width:100%;
+      border-radius:14px;
+      border:1px solid var(--line);
+      display:block;
+      margin-top:12px;
+    }
+
+    /* reveal animation */
+    .reveal{
+      opacity:0;
+      transform: translateY(8px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .reveal.show{
+      opacity:1;
+      transform: translateY(0);
+    }
+
+    footer{
+      margin-top:18px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
 
-    <header>
+    <header class="reveal">
       <div class="top">
         <div>
           <h1>Projects</h1>
           <p class="tagline">Selected work across threat intelligence, cybersecurity, and data analytics</p>
+          <div class="pillrow">
+            <span class="chip">🛡️ Security</span>
+            <span class="chip">📊 Data</span>
+            <span class="chip">🧩 Engineering</span>
+          </div>
           <p class="small">Tip: You can link directly to a project using the section IDs (anchors).</p>
         </div>
-        <div class="btnrow">
-          <a class="btn" href="index.html">Back to Home</a>
+
+        <div class="btnrow" aria-label="Primary links">
+          <a class="btn" href="https://www.linkedin.com/in/fatemeh-karam/" target="_blank" rel="noopener">🔗 LinkedIn</a>
+          <a class="btn" href="https://github.com/FatemehKaram/" target="_blank" rel="noopener">💻 GitHub</a>
+          <a class="btn" href="mailto:karam.fatemeh@yahoo.com">✉️ Email</a>
+          <button class="btn" id="themeBtn" type="button" aria-label="Toggle theme">🌙 Theme</button>
         </div>
       </div>
 
@@ -53,99 +274,170 @@
 
     <div class="grid">
 
-      <section class="card">
+      <section class="card reveal">
         <h2>Cybersecurity & Threat Intelligence</h2>
 
         <div id="threat-intel-assistant" class="anchor"></div>
-        <h3>Threat Intelligence Assistant (RAG + OSINT)</h3>
-        <p class="small">Sep 2025 – Oct 2025 · Python · Web App · APIs · RAG</p>
-        <p>
-          Built a Retrieval-Augmented Generation web application that enriches threat indicators (IPs, domains, file hashes)
-          using OSINT sources and produces automated intelligence summaries.
-        </p>
-        <ul>
-          <li>Integrated OSINT APIs (AbuseIPDB, AlienVault OTX) for multi-source enrichment.</li>
-          <li>Generated structured, automated intelligence reports and risk summaries.</li>
-          <li>Designed the app for quick analyst workflows (input → enrichment → summary).</li>
-        </ul>
-        <div class="pillrow">
-          <span class="pill">Python</span><span class="pill">RAG</span><span class="pill">OSINT</span><span class="pill">API Integration</span><span class="pill">Security Analytics</span>
-        </div>
-        <div class="btnrow">
-          <a class="btn" href="https://huggingface.co/spaces/Katiefkar/Threat-Intelligence-Assistant-Oct-15-2025" target="_blank" rel="noopener">Live Demo</a>
-          <a class="btn" href="https://github.com/FatemehKaram/rag-threat-intel-assistant-app" target="_blank" rel="noopener">GitHub Repo</a>
+        <div class="project">
+          <h3>Threat Intelligence Assistant (RAG + OSINT)</h3>
+          <div class="meta">Sep 2025 – Oct 2025 · Python · Web App · APIs · RAG</div>
+
+          <p>
+            Built a Retrieval-Augmented Generation web application that enriches threat indicators (IPs, domains, file hashes)
+            using OSINT sources and produces automated intelligence summaries.
+          </p>
+
+          <ul>
+            <li>Integrated OSINT APIs (AbuseIPDB, AlienVault OTX) for multi-source enrichment.</li>
+            <li>Generated structured, automated intelligence reports and risk summaries.</li>
+            <li>Designed for quick analyst workflows (input → enrichment → summary).</li>
+          </ul>
+
+          <div class="pillrow">
+            <span class="pill">Python</span><span class="pill">RAG</span><span class="pill">OSINT</span><span class="pill">API Integration</span><span class="pill">Security Analytics</span>
+          </div>
+
+          <div class="btnrow">
+            <a class="btn" href="https://huggingface.co/spaces/Katiefkar/Threat-Intelligence-Assistant-Oct-15-2025" target="_blank" rel="noopener">🚀 Live Demo</a>
+            <a class="btn" href="https://github.com/FatemehKaram/rag-threat-intel-assistant-app" target="_blank" rel="noopener">🧩 GitHub Repo</a>
+          </div>
+
+          <!-- Optional screenshot: upload an image to /images and uncomment -->
+          <!-- <img class="thumb" src="images/threat-intel.png" alt="Threat Intelligence Assistant screenshot" /> -->
         </div>
 
         <div id="hids-ebpf-lstm" class="anchor"></div>
-        <h3>Behavior-Based HIDS Using eBPF & LSTM</h3>
-        <p class="small">Jan 2024 – May 2024 · Linux · eBPF · Machine Learning</p>
-        <p>
-          Developed a Linux host intrusion detection system leveraging eBPF for real-time event tracing and an LSTM model
-          to detect anomalous process behaviors and potential threats.
-        </p>
-        <ul>
-          <li>Implemented kernel-level telemetry collection for efficient real-time monitoring.</li>
-          <li>Built an LSTM-based model to identify abnormal behavior patterns.</li>
-          <li>Focused on performance, low overhead, and actionable detection signals.</li>
-        </ul>
-        <div class="pillrow">
-          <span class="pill">Linux</span><span class="pill">eBPF</span><span class="pill">LSTM</span><span class="pill">Anomaly Detection</span>
+        <div class="project">
+          <h3>Behavior-Based HIDS Using eBPF & LSTM</h3>
+          <div class="meta">Jan 2024 – May 2024 · Linux · eBPF · Machine Learning</div>
+
+          <p>
+            Developed a Linux host intrusion detection system leveraging eBPF for real-time event tracing and an LSTM model
+            to detect anomalous process behaviors and potential threats.
+          </p>
+
+          <ul>
+            <li>Implemented kernel-level telemetry collection for efficient real-time monitoring.</li>
+            <li>Built an LSTM-based model to identify abnormal behavior patterns.</li>
+            <li>Focused on performance, low overhead, and actionable detection signals.</li>
+          </ul>
+
+          <div class="pillrow">
+            <span class="pill">Linux</span><span class="pill">eBPF</span><span class="pill">LSTM</span><span class="pill">Anomaly Detection</span>
+          </div>
+
+          <!-- Optional screenshot -->
+          <!-- <img class="thumb" src="images/hids.png" alt="HIDS project screenshot" /> -->
         </div>
       </section>
 
-      <section class="card">
+      <section class="card reveal">
         <h2>Data Analysis & Visualization</h2>
 
         <div id="applied-data-analysis" class="anchor"></div>
-        <h3>Applied Data Analysis & Visualization</h3>
-        <p class="small">Jan 2025 · Python · SQL · Excel</p>
-        <p>
-          End-to-end data analysis on multiple datasets, including preprocessing, cleaning, validation, exploratory analysis,
-          and stakeholder-ready visualizations.
-        </p>
-        <ul>
-          <li>Performed trend, distribution, correlation, and outlier analysis to identify key findings.</li>
-          <li>Created charts and summaries to communicate insights clearly to non-technical audiences.</li>
-          <li>Built reusable analysis workflows with Pandas/NumPy/Matplotlib.</li>
-        </ul>
-        <div class="pillrow">
-          <span class="pill">Pandas</span><span class="pill">NumPy</span><span class="pill">Matplotlib</span><span class="pill">SQL</span>
+        <div class="project">
+          <h3>Applied Data Analysis & Visualization</h3>
+          <div class="meta">Jan 2025 · Python · SQL · Excel</div>
+
+          <p>
+            End-to-end data analysis on multiple datasets, including preprocessing, cleaning, validation, exploratory analysis,
+            and stakeholder-ready visualizations.
+          </p>
+
+          <ul>
+            <li>Performed trend, distribution, correlation, and outlier analysis to identify key business findings.</li>
+            <li>Created charts and summaries to communicate insights to non-technical audiences.</li>
+            <li>Built reusable analysis workflows with Pandas/NumPy/Matplotlib.</li>
+          </ul>
+
+          <div class="pillrow">
+            <span class="pill">Pandas</span><span class="pill">NumPy</span><span class="pill">Matplotlib</span><span class="pill">SQL</span>
+          </div>
+
+          <!-- Optional screenshot -->
+          <!-- <img class="thumb" src="images/data-analysis.png" alt="Data analysis screenshot" /> -->
         </div>
 
         <div id="cognos-dashboard" class="anchor"></div>
-        <h3>Technology Trends Dashboard (IBM Cognos Analytics)</h3>
-        <p class="small">Jan 2025 · IBM Cognos Analytics</p>
-        <p>
-          Designed an interactive multi-tab dashboard analyzing technology usage trends, future adoption patterns, and demographic distributions.
-        </p>
-        <ul>
-          <li>Transformed raw survey data into decision-ready visual insights.</li>
-          <li>Built multiple dashboard tabs to support different stakeholder questions.</li>
-          <li>Applied data storytelling techniques for clear executive communication.</li>
-        </ul>
-        <div class="pillrow">
-          <span class="pill">IBM Cognos</span><span class="pill">Dashboarding</span><span class="pill">Data Storytelling</span>
+        <div class="project">
+          <h3>Technology Trends Dashboard (IBM Cognos Analytics)</h3>
+          <div class="meta">Jan 2025 · IBM Cognos Analytics · Dashboarding</div>
+
+          <p>
+            Designed an interactive multi-tab dashboard analyzing technology usage trends, future adoption patterns,
+            and demographic distributions.
+          </p>
+
+          <ul>
+            <li>Transformed raw survey data into decision-ready visual insights.</li>
+            <li>Built multiple dashboard tabs to answer key stakeholder questions.</li>
+            <li>Applied data storytelling for clear executive communication.</li>
+          </ul>
+
+          <div class="pillrow">
+            <span class="pill">IBM Cognos</span><span class="pill">Dashboarding</span><span class="pill">Data Storytelling</span>
+          </div>
+
+          <!-- Optional screenshot -->
+          <!-- <img class="thumb" src="images/cognos-dashboard.png" alt="IBM Cognos dashboard screenshot" /> -->
         </div>
       </section>
 
-      <section class="card">
+      <section class="card reveal">
         <h2>Add screenshots (optional)</h2>
         <p class="muted small">
-          If you want screenshots, create an <code>images/</code> folder in your repo and upload images like
-          <code>images/threat-intel.png</code>. Then insert:
+          Create an <code>images/</code> folder in your repo and upload screenshots (PNG/JPG), e.g.
+          <code>images/threat-intel.png</code>. Then you can uncomment the image lines inside each project.
         </p>
-        <pre style="white-space:pre-wrap;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;overflow:auto;">
-&lt;img src="images/threat-intel.png" alt="Threat Intelligence Assistant screenshot" style="width:100%;border-radius:12px;border:1px solid #e5e7eb;" /&gt;
+
+        <p class="small muted">Example image tag:</p>
+        <pre style="white-space:pre-wrap;background:rgba(255,255,255,.65);border:1px solid var(--line);border-radius:12px;padding:12px;overflow:auto;">
+&lt;img class="thumb" src="images/threat-intel.png" alt="Threat Intelligence Assistant screenshot" /&gt;
         </pre>
       </section>
 
     </div>
 
-    <footer>
+    <footer class="reveal">
       © <span id="y"></span> Fatemeh Karam · Projects
     </footer>
 
   </div>
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+
+  <script>
+    // Footer year
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Theme toggle (saved in localStorage)
+    const themeKey = "theme";
+    const savedTheme = localStorage.getItem(themeKey);
+    if (savedTheme === "dark") document.body.classList.add("dark");
+
+    const themeBtn = document.getElementById("themeBtn");
+    if (themeBtn) {
+      const setBtn = () => themeBtn.textContent = document.body.classList.contains("dark") ? "☀️ Theme" : "🌙 Theme";
+      setBtn();
+
+      themeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        localStorage.setItem(themeKey, document.body.classList.contains("dark") ? "dark" : "light");
+        setBtn();
+      });
+    }
+
+    // Active nav highlighting
+    const here = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    document.querySelectorAll("nav a.navlink").forEach(a => {
+      const target = (a.getAttribute("href") || "").split("/").pop().toLowerCase();
+      if (target === here) a.setAttribute("aria-current", "page");
+    });
+
+    // Reveal animations on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
 </body>
 </html>
