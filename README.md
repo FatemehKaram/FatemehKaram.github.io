@@ -2,79 +2,90 @@
 
 Welcome to my personal portfolio website repository.
 
-This site showcases my work across **Data Analytics, Cybersecurity, Backend Development, and IT Support**, along with selected projects, certifications, and professional experience.
+This site showcases my work in **Software Development, AI-powered Applications, Backend Development, and Cybersecurity**, along with selected projects, certifications, and professional experience.
 
-🌐 **Live portfolio:**  
-👉 https://fatemehkaram.github.io/   <!-- change if different -->
+🌐 **Live Portfolio**  
+👉 https://fatemehkaram.github.io/
 
 ---
 
 ## 🔎 About Me
 
-I’m a technical professional with experience spanning backend web development, cybersecurity research, and data analytics.
+I'm a Software Developer with experience building backend web applications and AI-powered solutions. My background includes developing web applications, designing relational databases, and integrating AI into practical software using Python, Flask, GPT-3.5, and Retrieval-Augmented Generation (RAG).
 
-I enjoy building **data-driven and security-focused solutions**, and translating complex technical insights into clear, actionable outcomes for stakeholders.
+I hold a Master's degree in Cybersecurity from New York Institute of Technology (NYIT) Vancouver. More recently, I built an AI-powered Threat Intelligence Assistant that combines LLMs with threat intelligence APIs to provide contextual security analysis.
 
-- 🎓 M.S. Cybersecurity — NYIT Vancouver  
-- 📊 NPower Junior Data Analyst Program  
-- 🧠 IBM Data Analyst Professional Certificate  
-- ☁️ Microsoft Azure AI-900  
+I'm interested in building reliable software, backend services, and AI-powered applications that solve real-world problems.
+
+- 🎓 M.S. Cybersecurity — NYIT Vancouver
+- ☁️ Microsoft Azure AI Fundamentals (AI-900)
+- 📊 IBM Data Analyst Professional Certificate
+- 💻 Professional experience in Backend Web Development
 
 ---
 
 ## 🛠️ Core Skills
 
-**Data & Analytics**
-- Python (Pandas, NumPy, Matplotlib)
-- SQL (MySQL, SQLite)
-- Data cleaning & EDA
-- Dashboarding & storytelling
+### Programming Languages
+- Python
+- PHP
+- JavaScript
+- SQL
 
-**Cybersecurity**
-- Threat intelligence
-- OSINT analysis
-- eBPF monitoring
-- Intrusion detection
+### Backend Development
+- Flask
+- REST APIs
+- API Integration
+- MySQL
+- SQLite
 
-**Development**
-- Python (Flask)
-- PHP (CodeIgniter)
-- Git / GitHub
-- Linux & Windows environments
+### AI Technologies
+- GPT-3.5 API Integration
+- Retrieval-Augmented Generation (RAG)
+- Prompt Engineering
+
+### Cloud & Tools
+- AWS EC2
+- Docker
+- Git
+- GitHub
+- Linux
+- Hugging Face Spaces
+- VMware
+- VirtualBox
 
 ---
 
 ## 🚀 Featured Projects
 
-### 🔐 Threat Intelligence Assistant (RAG + OSINT)
-Retrieval-Augmented Generation web app integrating OSINT APIs to enrich threat indicators and generate automated intelligence reports.
+### 🤖 AI-Powered Threat Intelligence Assistant
 
-- APIs: AbuseIPDB, AlienVault OTX  
-- Features: Indicator enrichment, automated summaries  
+Built a Python-based web application that analyzes IP addresses, domains, and file hashes using GPT-3.5, Retrieval-Augmented Generation (RAG), and multiple threat intelligence APIs.
 
-🔗 Live Demo:  
-https://huggingface.co/spaces/Katiefkar/Threat-Intelligence-Assistant-Oct-15-2025  
+**Technologies**
+- Python
+- Flask
+- GPT-3.5
+- RAG
+- AlienVault OTX API
+- AbuseIPDB API
 
-💻 Source Code:  
-https://github.com/FatemehKaram/rag-threat-intel-assistant-app  
+🔗 Live Demo  
+https://huggingface.co/spaces/Katiefkar/Threat-Intelligence-Assistant-Oct-15-2025
+
+💻 Source Code  
+https://github.com/FatemehKaram/rag-threat-intel-assistant-app
 
 ---
 
-### 🛡️ Behavior-Based HIDS (eBPF + LSTM)
-Linux host intrusion detection system using kernel telemetry and machine learning anomaly detection.
+### 🛡️ Behavior-Based Host Intrusion Detection System
 
-- Real-time event tracing via eBPF  
-- LSTM model for behavior detection  
+Linux host intrusion detection system using eBPF telemetry and machine learning to identify anomalous system behavior.
 
 ---
 
 ### 📊 Technology Trends Dashboard
-Interactive dashboard analyzing technology usage and adoption trends.
 
-- Built with IBM Cognos Analytics  
-- Multi-tab stakeholder insights  
+Interactive dashboard built with IBM Cognos Analytics to explore technology adoption trends through data visualization.
 
 ---
-
-## 📂 Repository Structure
-
